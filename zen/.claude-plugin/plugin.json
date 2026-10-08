@@ -4,6 +4,6 @@
   "description": "Modo Zen: esconde as chamadas de ferramentas, com botão sob o prompt e o comando /zen.",
   "types": "./types/index.d.ts",
   "author": {
-    "name": "ramson"
+    "name": "pancoh"
   }
 }

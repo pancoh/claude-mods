@@ -8,13 +8,18 @@ Mods pessoais para o Claude Code.
 
 ## Instalação
 
-No Claude Code, num terminal:
+No Claude Code, num terminal, digite um comando de cada vez no prompt:
 
 ```
-/plugin install zen --marketplace pancoh/claude-mods
+/plugin marketplace add pancoh/claude-mods
+/plugin install zen@ramson-mods
 ```
 
 Não é preciso conta no GitHub. O mod foi testado no Claude Code 2.1.294.
+
+Para atualizar: `/plugin update zen@ramson-mods`.
+
+Para desinstalar: `/plugin uninstall zen@ramson-mods`. Se quiser remover também o marketplace: `/plugin marketplace remove ramson-mods`.
 
 ## Desenvolvimento
 

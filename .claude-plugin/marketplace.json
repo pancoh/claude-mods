@@ -1,6 +1,6 @@
 {
   "name": "ramson-mods",
-  "owner": { "name": "ramson" },
+  "owner": { "name": "pancoh" },
   "plugins": [
     { "name": "zen", "source": "./zen", "description": "Modo Zen: esconde as chamadas de ferramentas, com botão sob o prompt e o comando /zen." }
   ]
