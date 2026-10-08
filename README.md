@@ -14,7 +14,7 @@ No Claude Code, num terminal:
 /plugin install zen --marketplace pancoh/claude-mods
 ```
 
-Como o repositório é privado, o `gh` ou o git precisam estar autenticados na conta dona dele.
+Não é preciso conta no GitHub. O mod foi testado no Claude Code 2.1.294.
 
 ## Desenvolvimento
 
