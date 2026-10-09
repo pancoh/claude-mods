@@ -33,15 +33,25 @@ export const register: Register = on => {
     return { text: now ? 'Modo Zen ligado.' : 'Modo Zen desligado.' }
   })
 
-  // Botão no canto direito da linha de dicas, sob o prompt.
-  on('ui.render', { component: 'PromptHint' }, async ($, e) => {
+  // Botão no canto direito da linha de dicas, sob o prompt. Se outro mod já
+  // desenhou a linha (o botão do Clean View), ela fica e o Zen entra depois.
+  on('ui.render', { component: 'PromptHint' }, async ($, e, next) => {
     const { Box, Text, Button } = $.ui.resolve(e)
     const zen = await read($, isOn)
-    return (
-      <Box justifyContent="space-between" flexGrow={1} gap={1}>
+    const below = await next(e)
+    const row =
+      below.type === 'engine' ? (
         <Text dimColor wrap="truncate">
           {oneLine(e.props.hint)}
         </Text>
+      ) : (
+        <Box flexGrow={1} flexShrink={1}>
+          {below}
+        </Box>
+      )
+    return (
+      <Box justifyContent="space-between" flexGrow={1} gap={1}>
+        {row}
         <Button key="zen-toggle" plain dimColor={!zen} label={zen ? '● zen' : '○ zen'} onPress={() => toggle($)} />
       </Box>
     )
